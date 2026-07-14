@@ -32,7 +32,19 @@ const questionsData = [
     { q: "______ exercise is good for your health.", o: ["Do", "Doing", "Does", "Did"], a: 1, exp: "Động từ dạng V-ing (Danh động từ) đứng đầu câu làm chủ ngữ." },
     { q: "When I arrived, they ______ dinner.", o: ["eat", "are eating", "were eating", "have eaten"], a: 2, exp: "Hành động đang diễn ra trong quá khứ (were eating) thì có hành động khác xen vào (arrived)." },
     { q: "This house ______ in 1990.", o: ["built", "builds", "was built", "is building"], a: 2, exp: "Câu bị động ở thì quá khứ đơn (in 1990): was + PII." },
-    { q: "Has she ever ______ to Japan?", o: ["be", "was", "being", "been"], a: 3, exp: "Thì hiện tại hoàn thành, phân từ II của 'be' là 'been'." }
+    { q: "Has she ever ______ to Japan?", o: ["be", "was", "being", "been"], a: 3, exp: "Thì hiện tại hoàn thành, phân từ II của 'be' là 'been'." },
+    
+    // Câu hỏi bẫy từ more_quiz.md
+    { q: "I have a lot of ______ to do tonight.", o: ["homeworks", "homework", "a homework", "the homeworks"], a: 1, exp: "Người Việt thường đếm 'một bài tập, hai bài tập' nên rất dễ chọn 'homeworks'. Tuy nhiên, trong tiếng Anh, 'homework' (bài tập về nhà), 'information' (thông tin), 'advice' (lời khuyên) là những danh từ không đếm được, do đó không bao giờ có chữ 's' ở cuối." },
+    { q: "The news about the storm ______ very bad.", o: ["is", "are", "be", "am"], a: 0, exp: "Từ 'news' (tin tức) có chữ 's' ở cuối khiến nhiều người tưởng đây là danh từ số nhiều và chọn 'are'. Thực chất, 'news' là danh từ không đếm được và luôn đi với động từ số ít." },
+    { q: "The police ______ running after the thief.", o: ["is", "are", "was", "has"], a: 1, exp: "Từ 'police' (cảnh sát) không có 's' ở cuối nên người học thường nghĩ nó là số ít và chọn 'is'. Nhưng 'the police' là một danh từ tập hợp luôn mang nghĩa số nhiều (lực lượng cảnh sát), do đó phải dùng 'are'." },
+    { q: "There are three ______ in the fish tank.", o: ["fish", "fishes", "fishs", "a fish"], a: 0, exp: "Quy tắc thông thường là thêm 's/es' khi có từ hai vật trở lên. Tuy nhiên, 'fish' (con cá) và 'sheep' (con cừu) là những danh từ đặc biệt: hình thức số ít và số nhiều của chúng giống y hệt nhau. (Lưu ý: 'fishes' chỉ dùng khi nói về các loài cá khác nhau)." },
+    { q: "She bought two ______ yesterday.", o: ["loaf of bread", "loafs of bread", "loaves of bread", "loaves of breads"], a: 2, exp: "'Bread' (bánh mì) là danh từ không đếm được, không thể thêm 's'. Để đếm bánh mì, ta dùng cụm 'a loaf of' (một ổ). Số nhiều của 'loaf' (kết thúc bằng -f) phải đổi thành 'loaves'." },
+    { q: "Everyone in the class ______ English very well.", o: ["speak", "speaks", "speaking", "are speaking"], a: 1, exp: "'Everyone' hoặc 'Everybody' dịch ra tiếng Việt là 'mọi người' (nghe có vẻ là số nhiều). Tuy nhiên, trong ngữ pháp tiếng Anh, các đại từ bất định này luôn được coi là chủ ngữ số ít. Do đó, động từ phải thêm 's/es'." },
+    { q: "I ______ the answer right now.", o: ["know", "am knowing", "knows", "knowing"], a: 0, exp: "Thấy dấu hiệu 'right now' (ngay bây giờ), người học sẽ lập tức chọn thì hiện tại tiếp diễn 'am knowing'. Tuy nhiên, 'know' (biết), 'understand' (hiểu), 'love' (yêu) là các động từ chỉ trạng thái (stative verbs), không bao giờ được dùng ở dạng V-ing." },
+    { q: "The box of chocolates ______ on the table.", o: ["is", "are", "be", "have"], a: 0, exp: "Người học nhìn thấy từ 'chocolates' đứng ngay trước chỗ trống nên sẽ vội chọn 'are'. Nhưng chủ ngữ chính của câu này là 'The box' (Chiếc hộp - số ít), 'of chocolates' chỉ là cụm từ bổ nghĩa cho chiếc hộp đó mà thôi." },
+    { q: "I am looking forward to ______ you soon.", o: ["see", "seeing", "saw", "seen"], a: 1, exp: "Người học được dạy quy tắc 'sau TO là một động từ nguyên thể (to V)'. Tuy nhiên, trong cấu trúc 'look forward to' (mong đợi điều gì), chữ 'to' ở đây là một giới từ, và theo nguyên tắc, sau giới từ phải là V-ing." },
+    { q: "Do you mind ______ the window?", o: ["open", "to open", "opening", "opened"], a: 2, exp: "Nhiều người quen miệng dùng 'to V' (giống như want to, need to). Nhưng sau động từ 'mind' (phiền, ngại) bắt buộc phải sử dụng động từ ở dạng V-ing. Cấu trúc: Would/Do you mind + V-ing?" }
 ];
 
 // Thuật toán Fisher-Yates để đảo ngẫu nhiên mảng
@@ -58,20 +70,26 @@ function buildQuiz() {
                     <li>
                         <label>
                             <input type="radio" name="q${qIndex}" value="${oIndex}">
-                            ${opt}
+                            <span class="custom-radio"></span>
+                            <span class="option-text">${opt}</span>
                         </label>
                     </li>
                 `;
         });
 
         quizHTML += `
-    <div class="question-block" id="block-${qIndex}">
-        <div class="question-title">Câu ${qIndex + 1}: ${question.q}</div>
+    <div class="question-block" id="block-${qIndex}" style="animation-delay: ${qIndex * 0.05}s">
+        <div class="question-title"><span class="q-number">Câu ${qIndex + 1}</span><span class="q-text">${question.q}</span></div>
         <ul class="options">
             ${optionsHTML}
         </ul>
         <div class="explanation" id="exp-${qIndex}">
-            <strong>Giải thích:</strong> ${question.exp}
+            <div class="exp-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            </div>
+            <div class="exp-content">
+                <strong>Giải thích:</strong> ${question.exp}
+            </div>
         </div>
     </div>
     `;
@@ -81,7 +99,9 @@ function buildQuiz() {
 
 // Hàm chấm điểm
 function checkAnswers() {
-    let score = 0;
+    let correctCount = 0;
+    let incorrectCount = 0;
+    let skippedCount = 0;
 
     questionsData.forEach((question, qIndex) => {
         const selectedOption = document.querySelector(`input[name="q${qIndex}"]:checked`);
@@ -102,31 +122,53 @@ function checkAnswers() {
         if (selectedOption) {
             const selectedValue = parseInt(selectedOption.value);
             if (selectedValue === question.a) {
-                score++;
+                correctCount++;
             } else {
+                incorrectCount++;
                 selectedOption.closest('li').classList.add('wrong-answer');
             }
+        } else {
+            skippedCount++;
         }
 
         // Hiện giải thích
-        explanationBlock.style.display = 'block';
+        explanationBlock.style.display = 'flex';
+        // Add a small delay for smooth transition
+        setTimeout(() => {
+            explanationBlock.classList.add('show');
+        }, 10);
     });
+
+    let score = correctCount;
 
     // Hiển thị kết quả
     const resultBanner = document.getElementById('result-banner');
     resultBanner.style.display = 'block';
-    resultBanner.innerHTML = `Bạn đã trả lời đúng ${score} / ${questionsData.length} câu.`;
+    resultBanner.innerHTML = `
+        <div class="score-display">${score} <span class="score-total">/ ${questionsData.length}</span></div>
+        <div class="score-stats">
+            <div class="stat-item correct">
+                <span class="stat-value">${correctCount}</span>
+                <span class="stat-label">Đúng</span>
+            </div>
+            <div class="stat-item incorrect">
+                <span class="stat-value">${incorrectCount}</span>
+                <span class="stat-label">Sai</span>
+            </div>
+            <div class="stat-item skipped">
+                <span class="stat-value">${skippedCount}</span>
+                <span class="stat-label">Bỏ qua</span>
+            </div>
+        </div>
+    `;
 
     resultBanner.className = ''; // reset
-    if (score >= 25) {
+    if (score >= Math.floor(questionsData.length * 0.8)) {
         resultBanner.classList.add('score-good');
-        resultBanner.innerHTML += ' <br />🎉 Xuất sắc! Kiến thức của bạn rất vững.';
-    } else if (score >= 15) {
+    } else if (score >= Math.floor(questionsData.length * 0.5)) {
         resultBanner.classList.add('score-average');
-        resultBanner.innerHTML += ' <br />👍 Khá tốt! Hãy ôn tập thêm các phần bị sai nhé.';
     } else {
         resultBanner.classList.add('score-poor');
-        resultBanner.innerHTML += ' <br />💪 Đừng nản lòng! Hãy đọc kỹ lại phần giải thích.';
     }
 
     // Ẩn nút nộp bài tránh nhấn nhiều lần, hoặc để người dùng xem lại

@@ -4,17 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trắc Nghiệm Ngữ Pháp Tiếng Anh</title>
+    <title>Trắc Nghiệm Ngữ Pháp Tiếng Anh | Professional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
+    <div class="background-decor"></div>
     <div class="container">
-        <h1>Ôn Tập Danh Từ & Động Từ</h1>
-        <div id="quiz-container"></div>
-        <button class="btn-submit" id="submit-btn" onclick="checkAnswers()">Nộp Bài & Xem Kết Quả</button>
+        <header class="quiz-header">
+            <h1>Ôn Tập Danh Từ & Động Từ</h1>
+            <p class="subtitle">Kiểm tra kiến thức ngữ pháp tiếng Anh của bạn</p>
+        </header>
         <div id="result-banner"></div>
+        <div id="quiz-container"></div>
+        <div class="action-container">
+            <button class="btn-submit" id="submit-btn" onclick="checkAnswers()">
+                <span>Nộp Bài & Xem Kết Quả</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </button>
+        </div>
     </div>
 
     <script src="script.js"></script>
