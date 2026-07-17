@@ -188,7 +188,7 @@ async function checkAnswers() {
     };
 
     try {
-        const response = await fetch('http://localhost:8080/api/scores', {
+        const response = await fetch('https://websocket-demo-7pab.onrender.com/api/scores', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
