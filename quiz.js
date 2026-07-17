@@ -1,0 +1,49 @@
+export const questionsData = [
+    // Tính từ (Adjective)
+    { q: "Chọn từ thích hợp điền vào chỗ trống: 'She bought a ______ mechanical keyboard yesterday.'", o: ["beauty", "beautifully", "beautiful", "beautify"], a: 2, exp: "Cần một tính từ đứng trước cụm danh từ 'mechanical keyboard' để bổ nghĩa (Attributive). 'Beautiful' là tính từ." },
+    { q: "The server remains ______ even during peak traffic hours.", o: ["stable", "stably", "stability", "stablest"], a: 0, exp: "Sau linking verb 'remains' cần một tính từ để miêu tả trạng thái." },
+    { q: "The error logs are very ______; I couldn't understand them at all.", o: ["confuse", "confusing", "confused", "confusion"], a: 1, exp: "Bẫy -ing/-ed: Tính từ đuôi '-ing' miêu tả bản chất của sự vật gây ra cảm giác cho người khác (những bản ghi lỗi này thật rắc rối)." },
+    { q: "The engineer was ______ by the unexpected error messages.", o: ["confuse", "confusing", "confused", "confusion"], a: 2, exp: "Bẫy -ing/-ed: Tính từ đuôi '-ed' miêu tả cảm xúc, trạng thái của một người khi bị tác động bởi sự việc." },
+    { q: "Chọn cụm từ đúng trật tự tính từ (Quy tắc OSASCOMP): 'He gave her a ______ box.'", o: ["small square wooden", "wooden small square", "square small wooden", "small wooden square"], a: 0, exp: "Theo quy tắc OSASCOMP: Size (small) -> Shape (square) -> Material (wooden)." },
+    { q: "The new script makes the data entry process highly ______.", o: ["efficiency", "efficiently", "efficient", "efficiencies"], a: 2, exp: "Cấu trúc tân ngữ đặc biệt: make + Object + Adj (làm cho cái gì đó trở nên như thế nào)." },
+    { q: "Let's build something ______ for the next marketing campaign.", o: ["innovate", "innovation", "innovative", "innovatively"], a: 2, exp: "Tính từ luôn đứng ngay SAU đại từ bất định (something, someone, nothing,...) để bổ nghĩa." },
+    { q: "Python is considered ______ than C++ for beginners.", o: ["easy", "more easy", "easily", "easier"], a: 3, exp: "So sánh hơn của tính từ ngắn (2 âm tiết tận cùng bằng y): đổi y thành i rồi thêm -er thành 'easier'." },
+    { q: "This is the ______ software bug I have ever encountered.", o: ["bad", "baddest", "worse", "worst"], a: 3, exp: "'Worst' là dạng so sánh nhất bất quy tắc của tính từ 'bad' (tồi tệ nhất)." },
+    { q: "Từ nào sau đây là tính từ dựa vào hậu tố?", o: ["Success", "Successfully", "Successful", "Succeed"], a: 2, exp: "Hậu tố '-ful' (mang đầy tính chất gì đó) là dấu hiệu nhận biết phổ biến của tính từ." },
+
+    // Trạng từ (Adverb)
+    { q: "He drives ______, so he rarely has accidents.", o: ["careful", "care", "carefully", "careless"], a: 2, exp: "Cần một trạng từ bổ nghĩa cho động từ thường 'drives' để diễn tả cách thức hành động (Manner)." },
+    { q: "The upcoming certification exam is ______ difficult.", o: ["extreme", "extremely", "extremity", "extremes"], a: 1, exp: "Trạng từ (extremely) đứng trước tính từ (difficult) để nhấn mạnh mức độ." },
+    { q: "______, we were able to restore the deleted database on time.", o: ["Fortunate", "Fortune", "Fortunately", "Unfortunate"], a: 2, exp: "Trạng từ đứng đầu câu, ngăn cách bằng dấu phẩy dùng để bổ nghĩa cho toàn bộ mệnh đề phía sau." },
+    { q: "She types very ______ when coding.", o: ["fastly", "fast", "fasting", "fastness"], a: 1, exp: "Bẫy kinh điển: 'Fast' là từ đặc biệt, hình thức tính từ và trạng từ giống hệt nhau. Không tồn tại từ 'fastly'." },
+    { q: "The development team performed exceptionally ______ in the last sprint.", o: ["good", "well", "goodly", "better"], a: 1, exp: "'Well' là trạng từ bất quy tắc của tính từ 'good', dùng để bổ nghĩa cho động từ 'performed'." },
+    { q: "Từ nào sau đây KHÔNG phải là trạng từ dù có đuôi '-ly'?", o: ["Quickly", "Carefully", "Friendly", "Easily"], a: 2, exp: "Bẫy đuôi -ly: 'Friendly' (thân thiện) bản chất là một tính từ, được cấu tạo từ Danh từ (friend) + ly." },
+    { q: "Chọn câu có trật tự trạng từ đúng theo quy tắc MPT:", o: ["He worked yesterday at the office hard.", "He worked hard at the office yesterday.", "He worked at the office hard yesterday.", "He worked hard yesterday at the office."], a: 1, exp: "Áp dụng quy tắc MPT (Cách thức -> Nơi chốn -> Thời gian): hard (M) -> at the office (P) -> yesterday (T)." },
+    { q: "He is ______ late for the morning stand-up meetings.", o: ["always", "always is", "always be", "be always"], a: 0, exp: "Vị trí trạng từ tần suất: Đứng SAU động từ 'to be' (is always late)." },
+    { q: "The system ______ automatically at midnight.", o: ["updates usually", "usually updates", "usually update", "update usually"], a: 1, exp: "Vị trí trạng từ tần suất: Đứng TRƯỚC động từ thường (usually updates)." },
+    { q: "She resolved the server issue ______ quickly.", o: ["incredible", "incredibly", "incredibility", "incredibleness"], a: 1, exp: "Cần một trạng từ (incredibly) đứng trước một trạng từ khác (quickly) để bổ nghĩa, nhấn mạnh mức độ." },
+
+    // Thì hiện tại đơn (Present Simple)
+    { q: "The central server ______ currently online and running smoothly.", o: ["are", "be", "am", "is"], a: 3, exp: "Chủ ngữ 'The central server' là ngôi thứ 3 số ít, động từ to be chia là 'is'." },
+    { q: "Our senior developer ______ code reviews every Friday.", o: ["conduct", "conducts", "conducting", "conducted"], a: 1, exp: "Hành động thói quen lặp lại (every Friday). Chủ ngữ 'Our senior developer' số ít nên V thêm 's'." },
+    { q: "Where ______ he live?", o: ["does", "do", "is", "are"], a: 0, exp: "Bẫy câu hỏi Wh-: Với động từ thường (live) và chủ ngữ số ít (he), ta phải mượn trợ động từ 'does'." },
+    { q: "The flight to Tokyo ______ at 8:00 AM tomorrow.", o: ["is departing", "depart", "departs", "will depart"], a: 2, exp: "Bẫy lịch trình: Dù có 'tomorrow', nhưng các sự việc theo lịch trình cố định (tàu xe, máy bay) bắt buộc dùng Hiện tại đơn." },
+    { q: "Water ______ at 100 degrees Celsius.", o: ["boil", "boils", "is boiling", "boiled"], a: 1, exp: "Diễn tả một sự thật hiển nhiên (chân lý), luôn dùng thì Hiện tại đơn." },
+    { q: "Everyone in the IT department ______ a more stable system.", o: ["want", "wants", "wanting", "are wanting"], a: 1, exp: "Bẫy đại từ bất định: Các từ như Everyone, Everybody, Someone... luôn chia động từ ở ngôi thứ 3 số ít." },
+    { q: "I ______ technical documentation every day before starting my tasks.", o: ["read", "reads", "am reading", "readed"], a: 0, exp: "Diễn tả thói quen (every day), chủ ngữ 'I' nên động từ 'read' giữ nguyên thể." },
+    { q: "The project deadlines ______ realistic.", o: ["isn't", "doesn't", "aren't", "don't"], a: 2, exp: "Chủ ngữ 'deadlines' số nhiều, dùng to be 'are' -> dạng phủ định là 'aren't'." },
+    { q: "The automated backup script ______ run on weekends.", o: ["isn't", "doesn't", "aren't", "don't"], a: 1, exp: "Chủ ngữ 'The script' số ít, động từ thường 'run' -> mượn trợ động từ phủ định 'doesn't'." },
+    { q: "Từ nào sau đây chia ĐÚNG ở ngôi thứ 3 số ít thì Hiện tại đơn?", o: ["watchs", "studys", "fixes", "goyes"], a: 2, exp: "Động từ kết thúc bằng 'o, s, ch, x, sh, z' (fix) phải thêm '-es' thành 'fixes'." },
+
+    // Thì hiện tại tiếp diễn (Present Continuous)
+    { q: "I ______ the Spring Boot application right now.", o: ["am debugging", "debugs", "debug", "debugging"], a: 0, exp: "Dấu hiệu 'right now' (ngay lúc nói) -> Dùng Hiện tại tiếp diễn (S + am/is/are + V-ing)." },
+    { q: "Watch out! The system ______ an unexpected database error.", o: ["encounter", "encounters", "is encountering", "encountered"], a: 2, exp: "Câu mệnh lệnh thu hút sự chú ý 'Watch out!' báo hiệu hành động đang xảy ra khẩn cấp ngay lúc nói." },
+    { q: "He usually works in Hanoi, but this month he ______ in Ho Chi Minh City.", o: ["works", "is working", "worked", "working"], a: 1, exp: "Nhấn mạnh tính tạm thời (this month), khác với bản chất ổn định (usually works)." },
+    { q: "I ______ the development team tomorrow morning. We have already booked the meeting room.", o: ["meet", "am meeting", "met", "meeting"], a: 1, exp: "Dùng Hiện tại tiếp diễn để diễn tả một kế hoạch cá nhân ở tương lai đã được chốt chắc chắn (có sự chuẩn bị)." },
+    { q: "I ______ how to configure the Elasticsearch cluster now.", o: ["understand", "am understanding", "understands", "understanding"], a: 0, exp: "Bẫy động từ trạng thái: 'Understand' thuộc nhóm nhận thức, KHÔNG BAO GIỜ chia ở thì tiếp diễn dù có 'now'." },
+    { q: "She ______ a new TKL mechanical keyboard right now.", o: ["is needing", "needs", "need", "needing"], a: 1, exp: "Bẫy động từ trạng thái: 'Need' (cần) chỉ cảm xúc/trạng thái, KHÔNG chia tiếp diễn dù có dấu hiệu 'right now'." },
+    { q: "The production server ______! We need to fix it immediately.", o: ["crashes always", "is always crashing", "always crashes", "always is crashing"], a: 1, exp: "Góc độ đặc biệt: Hiện tại tiếp diễn kết hợp với 'always' dùng để phàn nàn về một việc lặp đi lặp lại gây bực mình." },
+    { q: "The database synchronization ______ properly at the moment.", o: ["don't working", "doesn't works", "isn't working", "aren't working"], a: 2, exp: "Chủ ngữ 'The database synchronization' là số ít, thì HTTD thể phủ định dùng 'isn't working'." },
+    { q: "______ they ______ the new UI components currently?", o: ["Do / test", "Are / testing", "Is / testing", "Does / test"], a: 1, exp: "Dấu hiệu 'currently'. Câu hỏi ở HTTD với chủ ngữ 'they' -> cấu trúc: Are + they + V-ing." },
+    { q: "Water ______ at 100°C, but look! The water in the kettle ______ now.", o: ["boils / is boiling", "is boiling / boils", "boils / boils", "is boiling / is boiling"], a: 0, exp: "Vế đầu là sự thật hiển nhiên (HTĐ: boils). Vế sau có dấu hiệu 'look!' và 'now' chỉ sự việc đang diễn ra ngay lúc nói (HTTD: is boiling)." }
+];
