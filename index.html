@@ -7,7 +7,7 @@
     <title>Trắc Nghiệm Ngữ Pháp Tiếng Anh | Professional</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,8 +15,12 @@
     <div class="background-decor"></div>
     <div class="container">
         <header class="quiz-header">
-            <h1>Ôn Tập Danh Từ & Động Từ</h1>
-            <p class="subtitle">Kiểm tra kiến thức ngữ pháp tiếng Anh của bạn</p>
+            <h1>Ôn Tập Ngữ pháp</h1>
+            <p class="subtitle">Kiểm tra kiến thức ngữ pháp tiếng Anh đã học</p>
+            <div class="user-info-container">
+                <label for="username">Tên của bạn:</label>
+                <input type="text" id="username" placeholder="Nhập tên để lưu kết quả..." class="username-input">
+            </div>
         </header>
         <div id="result-banner"></div>
         <div id="quiz-container"></div>
@@ -25,6 +29,33 @@
                 <span>Nộp Bài & Xem Kết Quả</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
             </button>
+        </div>
+    </div>
+
+    <!-- Modal for Unanswered Questions -->
+    <div id="unanswered-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-icon">⚠️</div>
+            <h2>Khoan đã!</h2>
+            <p>Bạn còn các câu hỏi sau chưa hoàn thành:</p>
+            <div id="unanswered-list" class="unanswered-list"></div>
+            <button id="close-modal-btn" class="btn-close-modal">Tiếp tục làm bài</button>
+        </div>
+    </div>
+
+    <!-- Generic Modal for Alerts & Prompts -->
+    <div id="generic-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div id="generic-modal-icon" class="modal-icon">🔔</div>
+            <h2 id="generic-modal-title">Thông báo</h2>
+            <p id="generic-modal-message">Nội dung</p>
+            <div id="generic-modal-input-container" style="display: none; margin-bottom: 1.5rem;">
+                <input type="password" id="generic-modal-input" class="username-input" style="text-align: center; font-size: 1.25rem; letter-spacing: 2px;" autocomplete="off">
+            </div>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <button id="generic-modal-cancel" class="btn-close-modal" style="background-color: var(--text-muted); display: none;">Hủy</button>
+                <button id="generic-modal-ok" class="btn-close-modal">OK</button>
+            </div>
         </div>
     </div>
 
