@@ -1,5 +1,8 @@
 // Dữ liệu 30 câu hỏi
-import { questionsData } from './quiz.js';
+import * as quizzes from './quiz.js';
+
+let currentQuestionsData = [];
+let currentQuizName = "";
 
 // Thuật toán Fisher-Yates để đảo ngẫu nhiên mảng
 function shuffleArray(array) {
@@ -70,10 +73,10 @@ function showCustomModal({ title, message, icon = '🔔', isPrompt = false, onCo
 // Hàm tạo giao diện trắc nghiệm
 function buildQuiz() {
     // Đảo ngẫu nhiên câu hỏi
-    shuffleArray(questionsData);
+    shuffleArray(currentQuestionsData);
 
     let quizHTML = '';
-    questionsData.forEach((question, qIndex) => {
+    currentQuestionsData.forEach((question, qIndex) => {
         let optionsHTML = '';
         question.o.forEach((opt, oIndex) => {
             optionsHTML += `
@@ -128,7 +131,7 @@ async function checkAnswers() {
 
     if (!isTestMode) {
         // Lần 1: Kiểm tra các câu chưa làm
-        questionsData.forEach((question, qIndex) => {
+        currentQuestionsData.forEach((question, qIndex) => {
             const selectedOption = document.querySelector(`input[name="q${qIndex}"]:checked`);
             if (!selectedOption) {
                 skippedQuestions.push(qIndex);
@@ -158,15 +161,33 @@ async function checkAnswers() {
             const modal = document.getElementById('unanswered-modal');
             const list = document.getElementById('unanswered-list');
             if (modal && list) {
-                list.innerHTML = skippedQuestions.map(idx => `<span class="unanswered-badge">Câu ${idx + 1}</span>`).join('');
+                list.innerHTML = '';
+                skippedQuestions.forEach(idx => {
+                    const badge = document.createElement('span');
+                    badge.className = 'unanswered-badge';
+                    badge.textContent = `Câu ${idx + 1}`;
+                    badge.addEventListener('click', () => {
+                        modal.classList.remove('show');
+                        const block = document.getElementById(`block-${idx}`);
+                        if (block) {
+                            block.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            const originalShadow = block.style.boxShadow;
+                            block.style.boxShadow = "0 0 0 4px var(--wrong-border)";
+                            setTimeout(() => {
+                                block.style.boxShadow = originalShadow;
+                            }, 2000);
+                        }
+                    });
+                    list.appendChild(badge);
+                });
                 modal.classList.add('show');
             }
             return;
         }
     } else {
         // TRONG TEST MODE: Random điểm
-        correctCount = Math.floor(Math.random() * (questionsData.length + 1));
-        incorrectCount = questionsData.length - correctCount;
+        correctCount = Math.floor(Math.random() * (currentQuestionsData.length + 1));
+        incorrectCount = currentQuestionsData.length - correctCount;
     }
 
     // Đã làm hết -> Bật trạng thái loading
@@ -181,6 +202,7 @@ async function checkAnswers() {
     const now = new Date().toISOString();
     const payload = {
         name: finalUserName,
+        quiz: currentQuizName,
         correctAnswers: correctCount,
         incorrectAnswers: incorrectCount,
         submitDate: now,
@@ -202,7 +224,7 @@ async function checkAnswers() {
 
         // --- NẾU THÀNH CÔNG, HIỆN ĐÁP ÁN VÀ KẾT QUẢ ---
         if (!isTestMode) {
-            questionsData.forEach((question, qIndex) => {
+            currentQuestionsData.forEach((question, qIndex) => {
                 const selectedOption = document.querySelector(`input[name="q${qIndex}"]:checked`);
                 const optionsList = document.querySelectorAll(`input[name="q${qIndex}"]`);
                 const explanationBlock = document.getElementById(`exp-${qIndex}`);
@@ -238,7 +260,7 @@ async function checkAnswers() {
         if (resultBanner) {
             resultBanner.style.display = 'block';
             resultBanner.innerHTML = `
-                <div class="score-display">${score} <span class="score-total">/ ${questionsData.length}</span></div>
+                <div class="score-display">${score} <span class="score-total">/ ${currentQuestionsData.length}</span></div>
                 <div class="score-stats">
                     <div class="stat-item correct">
                         <span class="stat-value">${correctCount}</span>
@@ -260,9 +282,9 @@ async function checkAnswers() {
             }
 
             resultBanner.className = '';
-            if (score >= Math.floor(questionsData.length * 0.8)) {
+            if (score >= Math.floor(currentQuestionsData.length * 0.8)) {
                 resultBanner.classList.add('score-good');
-            } else if (score >= Math.floor(questionsData.length * 0.5)) {
+            } else if (score >= Math.floor(currentQuestionsData.length * 0.5)) {
                 resultBanner.classList.add('score-average');
             } else {
                 resultBanner.classList.add('score-poor');
@@ -280,6 +302,49 @@ async function checkAnswers() {
         submitBtn.disabled = false;
         submitBtn.classList.remove('loading');
     }
+}
+
+const quizSelect = document.getElementById('quiz-select');
+if (quizSelect) {
+    quizSelect.innerHTML = '';
+    const keys = Object.keys(quizzes);
+    keys.forEach(key => {
+        const quizObj = quizzes[key];
+        if (quizObj && Array.isArray(quizObj.quiz)) {
+            const displayName = quizObj.name || key;
+            const option = document.createElement('option');
+            option.value = key;
+            option.textContent = displayName;
+            quizSelect.appendChild(option);
+        }
+    });
+
+    if (keys.length > 0) {
+        // Default to the last available quiz
+        const defaultKey = keys[keys.length - 1];
+        quizSelect.value = defaultKey;
+        currentQuizName = quizSelect.options[quizSelect.selectedIndex].text;
+        currentQuestionsData = quizzes[defaultKey].quiz;
+    }
+
+    quizSelect.addEventListener('change', (e) => {
+        const selectedKey = e.target.value;
+        currentQuizName = e.target.options[e.target.selectedIndex].text;
+        currentQuestionsData = quizzes[selectedKey].quiz;
+        
+        buildQuiz();
+        
+        const resultBanner = document.getElementById('result-banner');
+        if (resultBanner) {
+            resultBanner.style.display = 'none';
+        }
+        
+        const submitBtn = document.getElementById('submit-btn');
+        if (submitBtn) {
+            submitBtn.style.display = 'flex';
+            submitBtn.disabled = false;
+        }
+    });
 }
 
 buildQuiz();

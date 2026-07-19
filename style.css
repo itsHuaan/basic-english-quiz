@@ -441,8 +441,16 @@ input[type="radio"]:checked ~ .option-text {
 .user-info-container {
     margin-top: 1.5rem;
     display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.input-group {
+    display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    flex: 1;
+    min-width: 200px;
 }
 
 .user-info-container label {
@@ -543,6 +551,15 @@ input[type="radio"]:checked ~ .option-text {
     font-weight: 600;
     font-size: 0.875rem;
     border: 1px solid var(--wrong-border);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.unanswered-badge:hover {
+    background-color: var(--wrong-border);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.2);
 }
 
 .btn-close-modal {
