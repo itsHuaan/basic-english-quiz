@@ -199,14 +199,11 @@ async function checkAnswers() {
     submitBtn.disabled = true;
     submitBtn.classList.add('loading');
 
-    const now = new Date().toISOString();
     const payload = {
         name: finalUserName,
         quiz: currentQuizName,
         correctAnswers: correctCount,
-        incorrectAnswers: incorrectCount,
-        submitDate: now,
-        editDate: now
+        incorrectAnswers: incorrectCount
     };
 
     try {
@@ -331,14 +328,14 @@ if (quizSelect) {
         const selectedKey = e.target.value;
         currentQuizName = e.target.options[e.target.selectedIndex].text;
         currentQuestionsData = quizzes[selectedKey].quiz;
-        
+
         buildQuiz();
-        
+
         const resultBanner = document.getElementById('result-banner');
         if (resultBanner) {
             resultBanner.style.display = 'none';
         }
-        
+
         const submitBtn = document.getElementById('submit-btn');
         if (submitBtn) {
             submitBtn.style.display = 'flex';
