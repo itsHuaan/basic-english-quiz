@@ -50,7 +50,7 @@ export const questionsDataDay1 = {
 };
 
 export const questionsDataDay2 = {
-    name: "Tính từ - Trạng từ",
+    name: "Tính từ - Trạng từ - HTD - HTTD",
     quiz: [
         // Tính từ (Adjective)
         { q: "Chọn từ thích hợp điền vào chỗ trống: 'She bought a ______ mechanical keyboard yesterday.'", o: ["beauty", "beautifully", "beautiful", "beautify"], a: 2, exp: "Cần một tính từ đứng trước cụm danh từ 'mechanical keyboard' để bổ nghĩa (Attributive). 'Beautiful' là tính từ." },
