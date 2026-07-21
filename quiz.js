@@ -1,5 +1,5 @@
 export const questionsDataDay1 = {
-    name: "Danh từ - Động từ",
+    name: "14-07-2026",
     quiz: [
         // Danh từ
         { q: "Trong câu 'The students are reading books in the library', từ nào sau đây là danh từ số ít?", o: ["students", "reading", "books", "library"], a: 3, exp: "library là danh từ số ít, các danh từ còn lại là số nhiều hoặc động từ." },
@@ -50,7 +50,7 @@ export const questionsDataDay1 = {
 };
 
 export const questionsDataDay2 = {
-    name: "Tính từ - Trạng từ - HTD - HTTD",
+    name: "18-07-2026",
     quiz: [
         // Tính từ (Adjective)
         { q: "Chọn từ thích hợp điền vào chỗ trống: 'She bought a ______ mechanical keyboard yesterday.'", o: ["beauty", "beautifully", "beautiful", "beautify"], a: 2, exp: "Cần một tính từ đứng trước cụm danh từ 'mechanical keyboard' để bổ nghĩa (Attributive). 'Beautiful' là tính từ." },
@@ -103,7 +103,7 @@ export const questionsDataDay2 = {
 };
 
 export const questionsDataDay3 = {
-    name: "Pro - Pre - Conj - Det - HTHT - HTHTTD",
+    name: "21-07-2026",
     quiz: [
         // --- PHẦN 1: ĐẠI TỪ (7 câu bẫy sở hữu, phản thân) ---
         { q: "This is not my laptop. ______ is the silver one on the desk.", o: ["My", "Mine", "Me", "I"], a: 1, exp: "Đứng đầu câu làm chủ ngữ mà không có danh từ theo sau, ta dùng đại từ sở hữu 'Mine' (thay thế cho 'my laptop')." },
