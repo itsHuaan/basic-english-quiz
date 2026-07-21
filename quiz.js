@@ -101,3 +101,72 @@ export const questionsDataDay2 = {
         { q: "Water ______ at 100°C, but look! The water in the kettle ______ now.", o: ["boils / is boiling", "is boiling / boils", "boils / boils", "is boiling / is boiling"], a: 0, exp: "Vế đầu là sự thật hiển nhiên (HTĐ: boils). Vế sau có dấu hiệu 'look!' và 'now' chỉ sự việc đang diễn ra ngay lúc nói (HTTD: is boiling)." }
     ]
 };
+
+export const questionsData = {
+    name: "Pro - Pre - Conj - Det - HTHT - HTHTTD",
+    quiz: [
+        // --- PHẦN 1: ĐẠI TỪ (7 câu bẫy sở hữu, phản thân) ---
+        { q: "This is not my laptop. ______ is the silver one on the desk.", o: ["My", "Mine", "Me", "I"], a: 1, exp: "Đứng đầu câu làm chủ ngữ mà không có danh từ theo sau, ta dùng đại từ sở hữu 'Mine' (thay thế cho 'my laptop')." },
+        { q: "The project manager asked John and ______ to prepare the presentation slides.", o: ["I", "mine", "myself", "me"], a: 3, exp: "Đứng sau động từ 'asked' làm tân ngữ, ta phải dùng tân ngữ 'me'. Không dùng đại từ phản thân 'myself' vì chủ ngữ là 'manager', không phải 'I'." },
+        { q: "She prefers to work in ______ own office rather than the shared coworking space.", o: ["hers", "her", "she", "herself"], a: 1, exp: "Trước cụm từ 'own office' (văn phòng riêng) bắt buộc phải dùng tính từ sở hữu 'her'." },
+        { q: "You don't need to help me. I can write all this code by ______.", o: ["me", "mine", "my", "myself"], a: 3, exp: "Cụm 'by oneself' mang nghĩa là tự mình làm việc gì đó (nhấn mạnh tính tự lực). Chủ ngữ là 'I' nên dùng 'myself'." },
+        { q: "The tech company is expanding ______ operations in the Asian market.", o: ["it's", "its", "it", "itself"], a: 1, exp: "Cần một tính từ sở hữu đứng trước danh từ 'operations'. Tính từ sở hữu của 'it' là 'its' (không có dấu phẩy). 'It's' là viết tắt của 'It is' hoặc 'It has'." },
+        { q: "Their software architecture was excellent, but the client still preferred ______.", o: ["our", "ours", "us", "we"], a: 1, exp: "Đứng cuối câu, không có danh từ theo sau, thay thế cho 'our architecture' -> bắt buộc dùng đại từ sở hữu 'ours'." },
+        { q: "After a long day of debugging, the senior developer bought a cup of coffee for ______.", o: ["him", "his", "himself", "he"], a: 2, exp: "Khi chủ ngữ (the senior developer) và tân ngữ là cùng một người, ta dùng đại từ phản thân 'himself'." },
+
+        // --- PHẦN 1: GIỚI TỪ (6 câu) ---
+        { q: "The new software update will be deployed ______ Monday morning.", o: ["in", "on", "at", "by"], a: 1, exp: "Với các buổi đi kèm với thứ cụ thể trong tuần (Monday morning), bắt buộc dùng giới từ 'on'." },
+        { q: "The development team needs to discuss ______ the new marketing strategy tomorrow.", o: ["about", "on", "with", "(không điền gì)"], a: 3, exp: "Bẫy kinh điển: Động từ 'discuss' luôn đi trực tiếp với tân ngữ, KHÔNG bao giờ dùng giới từ 'about' (discuss something)." },
+        { q: "Please make sure to sign your name ______ the bottom of the contract.", o: ["in", "on", "at", "to"], a: 2, exp: "Chỉ một vị trí điểm cụ thể trên trang giấy (đỉnh, đáy), ta dùng 'at' (at the top / at the bottom)." },
+        { q: "Are you sure this server is capable ______ handling 10,000 requests per second?", o: ["for", "of", "in", "to"], a: 1, exp: "Cụm tính từ cố định: 'capable of + V-ing' nghĩa là có khả năng làm gì đó." },
+        { q: "The annual budget will be divided equally ______ the four departments.", o: ["between", "among", "in", "for"], a: 1, exp: "Phân chia cho từ 3 đối tượng trở lên ta dùng 'among'. Dùng 'between' khi chỉ có 2 đối tượng." },
+        { q: "The server migration was delayed ______ the unexpected network outage.", o: ["because", "since", "due to", "despite"], a: 2, exp: "Phía sau khoảng trống là một cụm danh từ 'the unexpected network outage', do đó phải dùng giới từ 'due to' (hoặc because of)." },
+
+        // --- PHẦN 1: LIÊN TỪ (6 câu) ---
+        { q: "Neither the manager nor the employees ______ satisfied with the new overtime policy.", o: ["is", "are", "be", "was"], a: 1, exp: "Với cấu trúc tương quan 'Neither A nor B', động từ luôn chia theo chủ ngữ gần nó nhất (the employees - số nhiều)." },
+        { q: "______ having very little experience in Java, he completed the backend task perfectly.", o: ["Although", "Even though", "Despite", "Because"], a: 2, exp: "'having' là một V-ing, do đó phải dùng giới từ 'Despite' hoặc 'In spite of', KHÔNG dùng liên từ 'Although' (cộng mệnh đề)." },
+        { q: "She is not only a talented frontend developer ______ a great project manager.", o: ["but also", "and", "or", "so"], a: 0, exp: "Cấu trúc tương quan cố định 'Not only A but also B' (Không những A mà còn B)." },
+        { q: "Someone broke into the office ______ the security guard was sleeping.", o: ["during", "while", "because of", "despite"], a: 1, exp: "Sau khoảng trống là một mệnh đề hoàn chỉnh (S + V), do đó phải dùng liên từ 'while', không dùng giới từ 'during'." },
+        { q: "The database crashed unexpectedly; ______, we lost some unsaved transactions.", o: ["because", "therefore", "although", "but"], a: 1, exp: "Đứng sau dấu chấm phẩy (;), trước dấu phẩy (,) và mang nghĩa kết quả 'do đó' -> dùng trạng từ liên kết 'therefore'." },
+        { q: "You can use my personal laptop ______ you don't delete any of my project files.", o: ["as soon as", "as far as", "as long as", "as well as"], a: 2, exp: "Liên từ chỉ điều kiện mang nghĩa 'miễn là, với điều kiện là' -> 'as long as'." },
+
+        // --- PHẦN 1: HẠN ĐỊNH TỪ (6 câu) ---
+        { q: "I don't have ______ information about the upcoming API changes.", o: ["many", "much", "a few", "few"], a: 1, exp: "Bẫy danh từ đếm được: 'Information' (thông tin) là danh từ không đếm được, dùng 'much' chứ không dùng 'many'." },
+        { q: "Hurry up! We only have ______ time left before the client meeting starts.", o: ["a little", "a few", "many", "few"], a: 0, exp: "'Time' là danh từ không đếm được nên dùng 'a little' (mang nghĩa tích cực: còn một chút thời gian)." },
+        { q: "If you have ______ questions regarding the codebase, please feel free to ask.", o: ["some", "any", "much", "little"], a: 1, exp: "Trong mệnh đề điều kiện 'If' hoặc câu phủ định, nghi vấn, ta ưu tiên dùng lượng từ 'any' (bất cứ)." },
+        { q: "This printer is currently jammed. Please use ______ one down the hall.", o: ["other", "others", "the others", "another"], a: 3, exp: "Từ 'one' đứng sau là đại từ số ít, do đó phải dùng 'another' (một cái khác). 'Other' đi với danh từ số nhiều." },
+        { q: "______ employee must wear a security badge to enter the server room.", o: ["All", "Most", "Some", "Every"], a: 3, exp: "Danh từ 'employee' ở dạng số ít đếm được, do đó phải dùng 'Every' hoặc 'Each'. 'All, Most, Some' phải đi với số nhiều." },
+        { q: "The number of syntax errors in this code ______ surprising.", o: ["is", "are", "be", "were"], a: 0, exp: "Bẫy lượng từ: Cụm 'The number of' (Số lượng những...) làm chủ ngữ thì động từ LUÔN chia ở số ít." },
+
+        // --- PHẦN 2: THÌ HIỆN TẠI TIẾP DIỄN (8 câu) ---
+        { q: "I ______ what you mean, but I completely disagree with your approach.", o: ["am understanding", "understand", "understands", "understanding"], a: 1, exp: "Bẫy động từ trạng thái: 'understand' (nhận thức) KHÔNG bao giờ dùng ở thì tiếp diễn, dù hành động đang xảy ra ngay lúc nói." },
+        { q: "Please be quiet! The baby ______ in the next room.", o: ["sleeps", "is sleeping", "slept", "has slept"], a: 1, exp: "Dấu hiệu 'Please be quiet!' cho thấy hành động đang diễn ra tại thời điểm nói -> Hiện tại tiếp diễn." },
+        { q: "He usually drives to work, but this week he ______ the bus.", o: ["is taking", "takes", "take", "has taken"], a: 0, exp: "Dấu hiệu 'this week' chỉ một hành động tạm thời khác với bản chất/thói quen thường ngày (usually drives), dùng HTTD." },
+        { q: "My coworker ______ loudly on the phone! It's so annoying and distracting.", o: ["always talks", "is always talking", "talks always", "always is talking"], a: 1, exp: "Thì HTTD kết hợp với trạng từ 'always' dùng để phàn nàn về một thói quen xấu lặp đi lặp lại gây bực mình." },
+        { q: "We ______ a team dinner tomorrow evening. I have already booked the restaurant.", o: ["have", "are having", "had", "will have had"], a: 1, exp: "Thì HTTD dùng để diễn tả một kế hoạch cá nhân ở tương lai đã được chuẩn bị, lên lịch chắc chắn (have booked)." },
+        { q: "She ______ a brand new mechanical keyboard on her desk.", o: ["is having", "have", "has", "has been having"], a: 2, exp: "Bẫy động từ trạng thái: Động từ 'have' khi mang nghĩa là 'sở hữu', tuyệt đối KHÔNG chia tiếp diễn." },
+        { q: "Look! The CEO ______ towards our department.", o: ["is coming", "comes", "come", "has come"], a: 0, exp: "Câu mệnh lệnh gây sự chú ý 'Look!' báo hiệu hành động đang xảy ra ngay trước mắt." },
+        { q: "Right now, the development team ______ more time to finish the testing phase.", o: ["is needing", "needs", "need", "has needed"], a: 1, exp: "Bẫy động từ trạng thái: 'need' (cần) chỉ trạng thái, mong muốn. KHÔNG chia tiếp diễn dù có dấu hiệu 'Right now'." },
+
+        // --- PHẦN 2: THÌ HIỆN TẠI HOÀN THÀNH (9 câu) ---
+        { q: "I haven't seen the project manager ______ last Tuesday.", o: ["for", "since", "in", "on"], a: 1, exp: "Bẫy Since/For: 'last Tuesday' là một mốc thời gian cụ thể (như điểm trên lịch), bắt buộc dùng 'since'." },
+        { q: "The main server has been offline ______ three hours due to a power outage.", o: ["since", "in", "during", "for"], a: 3, exp: "Bẫy Since/For: 'three hours' là một khoảng độ dài thời gian, dùng giới từ 'for'." },
+        { q: "Has the IT support team fixed the network connectivity issue ______?", o: ["already", "just", "yet", "recently"], a: 2, exp: "Trạng từ 'yet' (chưa) thường đứng ở vị trí cuối câu trong câu hỏi và câu phủ định của thì Hiện tại hoàn thành." },
+        { q: "I ______ to Tokyo three times in my life for business trips.", o: ["am going", "have been", "went", "have gone"], a: 1, exp: "Thì HTHT dùng để diễn tả trải nghiệm hoặc số lần thực hiện hành động tính đến hiện tại (không có thời gian cụ thể)." },
+        { q: "Where is John? - He ______ to the bank to deposit some checks.", o: ["has been", "went", "has gone", "goes"], a: 2, exp: "Sự khác biệt: 'has gone to' nghĩa là đã đi nhưng chưa về (John đang không có ở đây). 'has been to' là đã đi và đã về rồi." },
+        { q: "Oh no! I ______ my database password, and I can't log in.", o: ["forget", "forgot", "have forgotten", "had forgotten"], a: 2, exp: "Hành động quên xảy ra trong quá khứ không rõ thời gian, nhưng để lại kết quả trực tiếp ở hiện tại (không thể đăng nhập)." },
+        { q: "Don't touch the wall! I ______ it.", o: ["painted", "have just painted", "just paint", "had just painted"], a: 1, exp: "Hành động vừa mới xảy ra xong, thường dùng với trạng từ 'just' đứng giữa 'have' và động từ phân từ 2." },
+        { q: "So far, our development team ______ 50% of the project's key milestones.", o: ["completed", "has completed", "completes", "is completing"], a: 1, exp: "Dấu hiệu 'So far' (cho đến nay) là dấu hiệu kinh điển yêu cầu chia thì Hiện tại hoàn thành." },
+        { q: "We ______ this frontend framework since it was first released in 2020.", o: ["use", "used", "have used", "are using"], a: 2, exp: "Cấu trúc kinh điển: [HTHT] + since + [Quá khứ đơn]. Vế chính bắt buộc chia Hiện tại hoàn thành." },
+
+        // --- PHẦN 2: THÌ HIỆN TẠI HOÀN THÀNH TIẾP DIỄN (8 câu) ---
+        { q: "It ______ heavily for two hours. The streets outside are completely flooded.", o: ["has rained", "has been raining", "is raining", "rained"], a: 1, exp: "Nhấn mạnh vào quá trình liên tục của hành động kéo dài suốt 2 giờ (How long) và đến giờ vẫn đang tiếp diễn." },
+        { q: "I ______ the new CEO for more than 10 years; we used to be classmates.", o: ["have known", "have been knowing", "know", "am knowing"], a: 0, exp: "Bẫy động từ trạng thái: 'know' không chia tiếp diễn. Dù có 'for 10 years' nhấn mạnh độ dài, ta bắt buộc phải lùi về dùng thì HTHT (have known)." },
+        { q: "You look absolutely exhausted! ______ you ______ out at the gym?", o: ["Are / working", "Do / work", "Have / been working", "Did / work"], a: 2, exp: "Dùng thì HTHT Tiếp diễn để diễn tả hành động vừa mới kết thúc hoặc kéo dài liên tục khiến chủ thể có dấu hiệu mệt mỏi ở hiện tại." },
+        { q: "She ______ code all day, but she still hasn't fixed the critical bug.", o: ["writes", "wrote", "has been writing", "is writing"], a: 2, exp: "Dấu hiệu 'all day' nhấn mạnh sự miệt mài, vất vả, tính liên tục của một quá trình chưa hoàn tất -> dùng HTHT Tiếp diễn." },
+        { q: "I ______ three cups of strong coffee this morning to stay awake.", o: ["have been drinking", "am drinking", "drink", "have drunk"], a: 3, exp: "Bẫy quá trình vs. kết quả: Câu này nhấn mạnh SỐ LƯỢNG kết quả đạt được (3 cups), do đó bắt buộc dùng HTHT, KHÔNG dùng HTHTTD." },
+        { q: "How long ______ you ______ for this tech company as a senior developer?", o: ["have / worked", "have / been working", "are / working", "do / work"], a: 1, exp: "Câu hỏi 'How long' với các động từ thường có tính liên tục (work, live, study) ưu tiên dùng thì HTHT Tiếp diễn để nhấn mạnh quá trình." },
+        { q: "The backend engineers ______ on the server migration since 8 AM.", o: ["have been working", "are working", "worked", "work"], a: 0, exp: "Nhấn mạnh hành động bắt đầu từ mốc thời gian trong quá khứ (since 8 AM), kéo dài liên tục đến hiện tại và có thể chưa xong." },
+        { q: "This corporate laptop ______ to me since I joined the company last year.", o: ["has been belonging", "belongs", "has belonged", "is belonging"], a: 2, exp: "Bẫy động từ trạng thái: 'belong' (thuộc về/sở hữu) là động từ trạng thái. Tuyệt đối không chia tiếp diễn, phải dùng HTHT." }
+    ]
+};
