@@ -102,7 +102,7 @@ export const questionsDataDay2 = {
     ]
 };
 
-export const questionsData = {
+export const questionsDataDay3 = {
     name: "Pro - Pre - Conj - Det - HTHT - HTHTTD",
     quiz: [
         // --- PHẦN 1: ĐẠI TỪ (7 câu bẫy sở hữu, phản thân) ---
